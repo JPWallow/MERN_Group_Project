@@ -1,0 +1,40 @@
+Sea 2 Shining Sea (The artists formerly known as Group #2)
+
+MERN Group Project Proposal 
+
+Working Title: Travel Journal 
+
+Project Description: 
+    During our first meeting we discussed how excited we were to collaborate on a project even though there is a 6 hour time zone difference between 
+    members of the group. This lead to the decission for both our group name and our project concept. We quickly decided that we would want to create 
+    an application that can connect people no matter the distance. This lead to our decission to make some a travel journal application.
+    
+    We want to create an application that allows users to login to a dashboard displaying a table of trips that they have experienced. 
+    The users will be able to upload information about the trip including location, dates, comments, and the ability to upload their favorite 
+    photo from the trip. On the destination detail page we would like to access a Weather API to display the historic weather data for the trip 
+    location in addition to the user generated form data. The final page of the application will be a community page which allows users to see 
+    trips that other users have experienced. 
+
+MVP:
+    -Login and Registration with validations (name length requirements, valid email, password length, matching passwords) 
+    -Nav bar component
+    -Dashboard page user's name and user specific trip information
+    -Dashboard links for details, edit, and delete.
+    -Create destination page with validations for all fields provided, redirect to dashboard on successful submit.
+    -Edit destination page with validations for all fields provided, redirect to dashboard on successful submit.
+    -Image upload capabilities on create and edit pages.
+    -Detail page displaying all data for a single trip. 
+    -Weather API integration on trip detail page.
+    -Community page displaying all trips data in database.
+
+Stretch Goals/ Backlog:
+    -Weather for entire trip, not just one date.
+    -Comments on Community Page (Many to Many Relationship)
+    -Integration of an Airport API
+
+Roles:
+    Edward Griffin: Login/Registration (Front-End and Back-End)/ Weather API
+    Renee Ishikawa: Back-End/ Weather API
+    Dieu Ha: Wireframe Design/CSS
+    Joshua Wallowitch: Front-End Components
+    All: Supporting each other as needed
