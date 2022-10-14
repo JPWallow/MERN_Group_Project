@@ -1,7 +1,7 @@
 const Travel = require('../models/travel.model');
 
 const TravelController = {
-
+// Eddie was here
     // Create a travel desination
     create:(req, res)=>{
         Travel.create(req.body)
