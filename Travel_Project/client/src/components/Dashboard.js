@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
-import Travel from '../../../server/models/travel.model';
 
 const Dashboard = (props) => {
 
@@ -25,9 +24,10 @@ const Dashboard = (props) => {
             <div>
                 {/* Will update to show user name once login is working */}
                 <p>Welcome, User!</p>
-                <Link to="">Community</Link>
-                <Link to="">Add Your Destination</Link>
-                <Link to="">Logout</Link>
+                <Link to="/community">Community</Link>
+                <Link to="/destinations/new">Add Your Destination</Link>
+                {/* Will update logout link once Login/Reg is funtional */}
+                <Link to="/">Logout</Link>
             </div>
             <div>
                 <table>

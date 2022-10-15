@@ -17,11 +17,15 @@ function App() {
             {/* Current default page until login front end is complete */}
             <Route path="/" element={<Dashboard destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
+            <Route path="/community" element={<Community destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             {/* Add a new destination - Create */}
             <Route path = "/destinations/new" element = {<AddDestination />} />
             
             {/* Get one destination - Read */}
             <Route path = "/destinations/:id" element = {<DestinationDtls />} />
+
+
+
           </Routes>
         </div>
       </BrowserRouter>
