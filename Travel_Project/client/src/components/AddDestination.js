@@ -32,12 +32,12 @@ const AddDestination = (props) => {
         .catch((err)=>console.log(err));
 
         axios.post("http://localhost:8000/api/travel",{
-            city: city,
-            country: country,
-            departed: departed,
-            returned: returned,
-            boxArt: boxArt,
-            comments: comments,
+            city,
+            country,
+            departed,
+            returned,
+            boxArt,
+            comments,
 
         })
         .then((res)=>{
