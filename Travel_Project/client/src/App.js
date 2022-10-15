@@ -4,9 +4,11 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import AddDestination from './components/AddDestination';
 import DestinationDtls from './components/DestinationDtls';
 import Dashboard from './components/Dashboard';
+import Community from './components/Community';
 
 function App() {
 
+  const [destinationList, setDestinationList] = useState([])
 
   return (
     <div className="App">
