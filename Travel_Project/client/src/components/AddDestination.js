@@ -41,6 +41,13 @@ const AddDestination = (props) => {
     }
     return (
         <div>
+            <div>
+                 {/* Will update logout & dashboard link once Login/Reg is funtional */}
+                <Link to="/community">Community</Link> |
+                <Link to="/">Dashboard</Link> |
+                <Link to="/destinations/new">Add Your Destination</Link> |
+                <Link to="/">Logout</Link>
+            </div>
             <h1>Add a Destination</h1>
 
             <form onSubmit={submitHandler}>

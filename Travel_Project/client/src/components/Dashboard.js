@@ -23,10 +23,10 @@ const Dashboard = (props) => {
         <div>
             <div>
                 {/* Will update to show user name once login is working */}
+                 {/* Will update logout link once Login/Reg is funtional */}
                 <p>Welcome, User!</p>
                 <Link to="/community">Community</Link> |
                 <Link to="/destinations/new">Add Your Destination</Link> |
-                {/* Will update logout link once Login/Reg is funtional */}
                 <Link to="/">Logout</Link>
             </div>
             <div>
