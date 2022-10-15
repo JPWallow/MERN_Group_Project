@@ -14,6 +14,7 @@ function App() {
         <div>
           <Routes>
             
+            {/* Current default page until login front end is complete */}
             <Route path="/" element={<Dashboard destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
             {/* Add a new destination - Create */}
