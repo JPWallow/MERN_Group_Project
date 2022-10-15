@@ -81,9 +81,9 @@ const AddDestination = (props) => {
         <div>
             <div>
                  {/* Will update logout & dashboard link once Login/Reg is funtional */}
-                <Link to="/community">Community</Link> |
-                <Link to="/">Dashboard</Link> |
-                <Link to="/destinations/new">Add Your Destination</Link> |
+                <Link to="/community">Community</Link> | 
+                <Link to="/">Dashboard</Link> | 
+                <Link to="/destinations/new">Add Your Destination</Link> | 
                 <Link to="/">Logout</Link>
             </div>
             <h1>Add Your Destination</h1>
@@ -101,14 +101,14 @@ const AddDestination = (props) => {
                             setCity(e.target.value);// this line is setting the state to so onChange the setter is setting the city to the value 
                         }} type="text" />
                         <br />
-                        {/* Need to hard code countries for the dropdown input  */}
+                        {/* Need to hard code countries for the dropdown input standard text input for the meantime */}
                         <label>Destination Country:</label>
                         <input onChange={(e)=>{
                             console.log(e)
                             console.log(e.target)
                             console.log(e.target.value)
                             setCountry(e.target.value);
-                        }} type="select" />
+                        }} type="text" />
                         <br />
                         <label>Departed:</label>
                         <input onChange={(e)=>{
@@ -127,7 +127,12 @@ const AddDestination = (props) => {
                         }} type="date" />
                         <br />
                         <label>Upload a picture:</label>
-                        {/* Upload a photo- Researching this input */}
+                        <input onChange={(e)=>{
+                            console.log(e)
+                            console.log(e.target)
+                            console.log(e.target.value)
+                            setBoxArt(e.target.value);
+                        }} type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" />
                         <br />
                         <label>Comments:</label>
                         <input onChange={(e)=>{
