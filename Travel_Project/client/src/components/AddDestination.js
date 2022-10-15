@@ -101,7 +101,7 @@ const AddDestination = (props) => {
                             setCity(e.target.value);// this line is setting the state to so onChange the setter is setting the city to the value 
                         }} type="text" />
                         <br />
-                        {/* Need to hard code countries for the dropdown input standard text input for the meantime */}
+                        {/* Need to hard code countries for the dropdown input, standard text input for the meantime */}
                         <label>Destination Country:</label>
                         <input onChange={(e)=>{
                             console.log(e)
