@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const DestinationDtls = () => {
+const Community = () => {
     return (
         <div>
-            <h1>Destination Details</h1>
+            <h1>Community Page</h1>
         </div>
     )
 }
 
-export default DestinationDtls
+export default Community
