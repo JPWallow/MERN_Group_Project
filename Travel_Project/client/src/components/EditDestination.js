@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./AddDestination.module.css";
 
-const EditDestination = () => {
+const EditDestination = (props) => {
 
     const{id} = useParams();
 
@@ -172,15 +172,15 @@ const EditDestination = () => {
                     <li>
                         <button>Submit</button>
                     </li>
-                    <p>City: {city.name}</p>
+                    {/*<p>City: {city.name}</p>
                     {city.sys ? <p>Country: {city.sys.country}</p> : null}
-                    {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
+                    {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "} */}
                     {/* since we're trying to access a child element which temp is a child element of main, need to check if city.main is available and if so then continue to read the child elements */}
-                    {city.main ? (
+                    {/* {city.main ? (
                         <p>Temperature feels like: {city.main.feels_like}°F</p>
                     ) : null}
-                    {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}
-                    </ul>
+                    {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}*/}
+                    </ul> 
                 </form>
             </div>
         </div>

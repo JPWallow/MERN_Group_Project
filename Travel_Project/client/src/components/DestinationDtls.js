@@ -1,9 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect} from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./AddDestination.module.css";
 
-const DestinationDtls = () => {
+const DestinationDtls = (props) => {
+    
+    const{id} = useParams();
+    const [oneDestination, setOneDestination] = useState({});
+
+
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/travel/${id}`)
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                setOneDestination(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [])
+
     return (
     <div className={styles.mainContainer}>
         <div className={styles.container}>
@@ -19,11 +36,11 @@ const DestinationDtls = () => {
                         <li><Link className={styles.link} to="/">Logout</Link></li>
                     </ul>
                 </div>
-                <h1>Destination Details</h1>
+                <h1>{oneDestination.city}, {oneDestination.country}</h1>
             </div>
         </div>
     </div>
     )
 }
 
-export default DestinationDtls
+export default DestinationDtls;
