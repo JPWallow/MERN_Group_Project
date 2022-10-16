@@ -45,7 +45,7 @@ const Dashboard = (props) => {
                                 <td>{destination.departed}</td>
                                 <td>{destination.returned}</td>
                                 {/* Will update with correct links */}
-                                <td><Link to={`/destinations/${destination._id}`}>Details</Link> <Link to={``}>Edit</Link> <Link to={``}>Delete</Link></td>
+                                <td><Link to={`/destinations/${destination._id}`}>Details</Link> <Link to={`/destinations/edit/${destination._id}`}>Edit</Link> <Link to={``}>Delete</Link></td>
                             </tr>
                         ))}
                     </tbody>

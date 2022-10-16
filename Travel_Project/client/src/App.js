@@ -5,6 +5,7 @@ import AddDestination from './components/AddDestination';
 import DestinationDtls from './components/DestinationDtls';
 import Dashboard from './components/Dashboard';
 import Community from './components/Community';
+import EditDestination from './components/EditDestination';
 
 function App() {
 
@@ -25,9 +26,9 @@ function App() {
             
             {/* Get one destination - Read */}
             <Route path = "/destinations/:id" element = {<DestinationDtls />} />
-
-
-
+            
+            {/* Update one destination - Update */}
+            <Route path = "/destinations/edit/:id" element = {<EditDestination />} />
           </Routes>
         </div>
       </BrowserRouter>
