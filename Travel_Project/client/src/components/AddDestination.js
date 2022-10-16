@@ -112,6 +112,9 @@ const AddDestination = (props) => {
               <li>
                 <label>City:</label><br />
                 <input
+                  type="text"
+                  value={city}
+                  name="city"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
@@ -119,13 +122,15 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setCity(e.target.value); // this line is setting the state to so onChange the setter is setting the city to the value
                   }}
-                  type="text"
                 />
               </li>
               {/* Need to hard code countries for the dropdown input, standard text input for the meantime */}
               <li>
                 <label>Destination Country:</label><br />
                 <input
+                  type="text"
+                  value={country}
+                  name="country"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
@@ -133,12 +138,14 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setCountry(e.target.value);
                   }}
-                  type="text"
                 />
               </li>
               <li>
                 <label>Departed:</label><br />
                 <input
+                  type="date"
+                  value={departed}
+                  name="departed"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
@@ -146,12 +153,14 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setDeparted(e.target.value);
                   }}
-                  type="date"
                 />
               </li>
               <li>
                 <label>Returned:</label><br />
                 <input
+                  type="date"
+                  value={returned}
+                  name="returned"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
@@ -159,12 +168,16 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setReturned(e.target.value);
                   }}
-                  type="date"
                 />
               </li>
               <li>
                 <label>Upload a picture:</label><br />
                 <input
+                  type="file"
+                  value={boxArt}
+                  name="boxArt"
+                  id="image-input"
+                  accept="image/jpeg, image/png, image/jpg"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
@@ -172,22 +185,21 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setBoxArt(e.target.value);
                   }}
-                  type="file"
-                  id="image-input"
-                  accept="image/jpeg, image/png, image/jpg"
                 />
               </li>
               <li>
                 <label>Comments:</label><br />
                 <input
+                  type="text"
+                  value={comments}
+                  name="comments"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
                     console.log(e.target);
                     console.log(e.target.value);
-                    setReturned(e.target.value);
+                    setComments(e.target.value);
                   }}
-                  type="textarea"
                 />
               </li>
               <li>

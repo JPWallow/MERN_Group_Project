@@ -28,10 +28,10 @@ function App() {
             <Route path = "/destinations/new" element = {<AddDestination />} />
             
             {/* Get one destination - Read */}
-            <Route path = "/destinations/:id" element = {<DestinationDtls />} />
+            <Route path = "/destinations/:id" element = {<DestinationDtls destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
             {/* Update one destination - Update */}
-            <Route path = "/destinations/edit/:id" element = {<EditDestination />} />
+            <Route path = "/destinations/edit/:id" element = {<EditDestination destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
           </Routes>
         </div>
       </BrowserRouter>
