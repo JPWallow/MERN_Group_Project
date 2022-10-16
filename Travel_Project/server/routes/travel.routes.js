@@ -9,9 +9,10 @@ const routes = (app) => {
     app.get('/api/travel/:id',TravelController.getOne)
 
     // Update
-
+    app.put('/api/travel/edit/:id',TravelController.updateOne)
 
     // Delete
+    app.delete('/api/travel/:id',TravelController.deleteOne)
 }
 
 module.exports = routes
