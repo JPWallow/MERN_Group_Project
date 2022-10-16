@@ -6,6 +6,7 @@ import DestinationDtls from './components/DestinationDtls';
 import Dashboard from './components/Dashboard';
 import Community from './components/Community';
 import EditDestination from './components/EditDestination';
+import Login from './components/Login';
 
 function App() {
 
