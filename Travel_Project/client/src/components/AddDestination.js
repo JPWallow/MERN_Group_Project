@@ -48,8 +48,7 @@ const AddDestination = (props) => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        // update navigate once login is functioning
-        navigate("/");
+        navigate("/dashboard");
         setCity("");
         setCountry("");
         setDeparted("");
@@ -190,7 +189,7 @@ const AddDestination = (props) => {
               <li>
                 <label>Comments:</label><br />
                 <input
-                  type="text"
+                  type="textarea"
                   value={comments}
                   name="comments"
                   className={styles.input}

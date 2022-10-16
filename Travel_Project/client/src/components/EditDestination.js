@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./AddDestination.module.css";
 
-const EditDestination = (props) => {
+const EditDestination = () => {
 
     const{id} = useParams();
 
