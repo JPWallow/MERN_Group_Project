@@ -25,18 +25,7 @@ const AddDestination = (props) => {
         .catch((err)=>console.log(err))
 
     // }
-        //! Need to get the axios post working
-    // const submitHandler=(e) =>{
-    //     e.preventDefault();
-    //     // placing the axios in the submitHandler event
-    //     axios.post(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=imperial`)
-    //     .then((res)=>{
-    //         console.log(res);
-    //         console.log(res.data);
-    //         setCity(res.data); 
-    //         setCountry(res.data);
-    //     })
-    //     .catch((err)=>console.log(err))
+
 
     }
     return (
