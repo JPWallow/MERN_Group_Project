@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
+
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -93,7 +95,7 @@ const AddDestination = (props) => {
           <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
           
           <li><Link className={styles.link} to="/">Logout</Link></li>
-            </ul>
+
         </div>
         <h1>Add Your Destination</h1>
       </div>
