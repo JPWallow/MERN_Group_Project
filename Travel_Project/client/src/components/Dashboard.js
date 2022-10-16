@@ -25,7 +25,7 @@ const Dashboard = (props) => {
             .then (res => {
                 removeFromDom(destinationId)
                 console.log(res.data);
-                window.location.reload(false);
+                navigate("/dashboard")
                 
             })
             .catch(err => console.log(err));
