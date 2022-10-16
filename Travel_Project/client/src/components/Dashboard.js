@@ -9,6 +9,7 @@ const Dashboard = (props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        
         axios.get("http://localhost:8000/api/travel")
             .then((res) => {
                 console.log(res);
