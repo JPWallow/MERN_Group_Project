@@ -23,8 +23,8 @@ const Community = (props) => {
     return (
         <div>
             <div>
-                 {/* Will update logout & dashboard link once Login/Reg is funtional */}
-                <Link to="/">Dashboard</Link> |
+                 {/* Will update logout link once Login/Reg is funtional */}
+                <Link to="/dashboard">Dashboard</Link> |
                 <Link to="/destinations/new">Add Your Destination</Link> |
                 <Link to="/">Logout</Link>
             </div>

@@ -177,7 +177,7 @@ const AddDestination = (props) => {
               />
             </li>
             <li>
-              <label>Comments:</label><br />
+              <label>Comments:</label>
               <input
                 className={styles.input}
                 onChange={(e) => {
