@@ -49,6 +49,7 @@ const EditDestination = (props) => {
             .catch(err => console.log(err))
     }
 
+
     return (
     <div className={styles.mainContainer}>
         <div className={styles.container}>
@@ -56,9 +57,11 @@ const EditDestination = (props) => {
                 <div className={styles.header}>
                     <ul>
                     {/* Will update logout link once Login/Reg is funtional */}
+
                         <li><Link className={styles.link} to="/dashboard">Dashboard</Link>{" "}</li>
                         <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
                         <li><Link className={styles.link} to="/community">Community</Link>  </li>
+
                         <li><Link className={styles.link} to="/">Logout</Link></li>
                     </ul>
                 </div>
@@ -67,6 +70,7 @@ const EditDestination = (props) => {
             <div className={styles.body}>
                 <form onSubmit={updateOne} className={styles.form}>
                     <ul>
+
                         <li className={styles.validation}>
                             {/* {errors.map((err, index) => (
                             <p style={{ color: "red" }} key={index}>

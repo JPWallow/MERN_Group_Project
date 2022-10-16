@@ -18,6 +18,8 @@ const Dashboard = (props) => {
             .catch((error) => {
                 console.log(error)
             })
+        
+        
     }, [])
 
     const deleteDestination = (destinationId) => {
@@ -56,6 +58,7 @@ const Dashboard = (props) => {
                                 <td>{destination.departed}</td>
                                 <td>{destination.returned}</td>
                                 {/* Will update with correct links */}
+
                                 <td>
                                     <Link to={`/destinations/${destination._id}`}>Details</Link> 
                                     <Link to={`/destinations/edit/${destination._id}`}>Edit</Link> 
