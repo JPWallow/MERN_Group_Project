@@ -23,12 +23,10 @@ const Dashboard = (props) => {
     }, [])
 
     const deleteDestination = (destinationId) => {
-        axios.delete(`http://localhost:8000/api/travel/` + destinationId)
-            .then (res => {
-                removeFromDom(destinationId)
-                console.log(res.data);
-                navigate("/dashboard")
-                
+        axios.delete(`http://localhost:8000/api/travel/${destinationId}`)
+                .then (res => {
+                const newDestinationList = destinationList.filter((oneDestination) => oneDestination._id !== destinationId);
+                setDestinationList(newDestinationList);
             })
             .catch(err => console.log(err));
     }
