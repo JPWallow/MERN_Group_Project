@@ -18,7 +18,9 @@ function App() {
           <Routes>
             
             {/* Current default page until login front end is complete */}
-            <Route path="/" element={<Dashboard destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
+            <Route path="/" element={<Login />} />
+            
+            <Route path="/dashboard" element={<Dashboard destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
             <Route path="/community" element={<Community destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             {/* Add a new destination - Create */}
