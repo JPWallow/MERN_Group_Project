@@ -24,8 +24,9 @@ function App() {
             <Route path="/dashboard" element={<Dashboard destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
             <Route path="/community" element={<Community destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
+            
             {/* Add a new destination - Create */}
-            <Route path = "/destinations/new" element = {<AddDestination />} />
+            <Route path = "/destinations/new" element = {<AddDestination destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
             
             {/* Get one destination - Read */}
             <Route path = "/destinations/:id" element = {<DestinationDtls destinationList = {destinationList} setDestinationList = {setDestinationList} />} />
