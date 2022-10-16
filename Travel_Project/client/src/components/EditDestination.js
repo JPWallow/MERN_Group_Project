@@ -148,7 +148,7 @@ const EditDestination = (props) => {
                                 console.log(e);
                                 console.log(e.target);
                                 console.log(e.target.value);
-                                setReturned(e.target.value);
+                                setBoxArt(e.target.value);
                             }}
                             />
                         </li>
