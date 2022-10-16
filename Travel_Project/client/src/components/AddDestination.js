@@ -86,16 +86,16 @@ const AddDestination = (props) => {
     <div className={styles.container}>
       <div className={styles.nav}>
         <div className={styles.header}>
-            <ul>
+          <ul>
 
           {/* Will update logout & dashboard link once Login/Reg is funtional */}
-          <li><Link className={styles.link} to="/community">Community</Link>  </li>
-          <li><Link className={styles.link} to="/">Dashboard</Link>{" "}</li>
-         
-          <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
+            <li><Link className={styles.link} to="/community">Community</Link>  </li>
+            <li><Link className={styles.link} to="/">Dashboard</Link>{" "}</li>
           
-          <li><Link className={styles.link} to="/">Logout</Link></li>
-
+            <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
+            
+            <li><Link className={styles.link} to="/">Logout</Link></li>
+          </ul>
         </div>
         <h1>Add Your Destination</h1>
       </div>
