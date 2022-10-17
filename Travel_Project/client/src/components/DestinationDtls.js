@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, Link } from "react-router-dom";
 
-import styles from "./AddDestination.module.css";
+import styles from "./DestinationDtls.module.css";
 
 const DestinationDtls = (props) => {
 

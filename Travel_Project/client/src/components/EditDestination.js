@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
-import styles from "./AddDestination.module.css";
+import styles from "./EditDestination.module.css";
 
 const EditDestination = (props) => {
 

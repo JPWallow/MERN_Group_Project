@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
-
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -72,12 +70,30 @@ const AddDestination = (props) => {
         <div className={styles.nav}>
           <div className={styles.header}>
             <ul>
-
               {/* Will update logout link once Login/Reg is funtional */}
-              <li><Link className={styles.link} to="/dashboard">Dashboard</Link>{" "}</li>
-              <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
-              <li><Link className={styles.link} to="/community">Community</Link>  </li>
-              <li><Link className={styles.link} to="/">Logout</Link></li>
+              <li>
+                <Link className={styles.link} to="/dashboard">
+                  Dashboard
+                </Link>{" "}
+                |
+              </li>
+              <li>
+                <Link className={styles.link} to="/destinations/new">
+                  Add Your Destination
+                </Link>{" "}
+                |
+              </li>
+              <li>
+                <Link className={styles.link} to="/community">
+                  Community
+                </Link>{" "}
+                |
+              </li>
+              <li>
+                <Link className={styles.link} to="/">
+                  Logout
+                </Link>
+              </li>
             </ul>
           </div>
           <h1>Add Your Destination</h1>
@@ -94,7 +110,8 @@ const AddDestination = (props) => {
                 ))}
               </li>
               <li>
-                <label>City:</label><br />
+                <label>City:</label>
+                <br />
                 <input
                   type="text"
                   value={city}
@@ -110,7 +127,8 @@ const AddDestination = (props) => {
               </li>
               {/* Need to hard code countries for the dropdown input, standard text input for the meantime */}
               <li>
-                <label>Destination Country:</label><br />
+                <label>Destination Country:</label>
+                <br />
                 <input
                   type="text"
                   value={country}
@@ -125,7 +143,8 @@ const AddDestination = (props) => {
                 />
               </li>
               <li>
-                <label>Departed:</label><br />
+                <label>Departed:</label>
+                <br />
                 <input
                   type="date"
                   value={departed}
@@ -140,7 +159,8 @@ const AddDestination = (props) => {
                 />
               </li>
               <li>
-                <label>Returned:</label><br />
+                <label>Returned:</label>
+                <br />
                 <input
                   type="date"
                   value={returned}
@@ -155,7 +175,8 @@ const AddDestination = (props) => {
                 />
               </li>
               <li>
-                <label>Upload a picture:</label><br />
+                <label>Upload a picture:</label>
+                <br />
                 <input
                   type="file"
                   value={boxArt}
@@ -172,12 +193,13 @@ const AddDestination = (props) => {
                 />
               </li>
               <li>
-                <label>Comments:</label><br />
-                <input
+                <label>Comments:</label>
+                <br />
+                <textarea
                   type="textarea"
                   value={comments}
                   name="comments"
-                  className={styles.input}
+                  className={styles.inputTextarea}
                   onChange={(e) => {
                     console.log(e);
                     console.log(e.target);
@@ -189,16 +211,17 @@ const AddDestination = (props) => {
               <li>
                 <button>Submit</button>
               </li>
-              <p>City: {city.name}</p>
-              {city.sys ? <p>Country: {city.sys.country}</p> : null}
-              {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
-              {/* since we're trying to access a child element which temp is a child element of main, need to check if city.main is available and if so then continue to read the child elements */}
-              {city.main ? (
-                <p>Temperature feels like: {city.main.feels_like}°F</p>
-              ) : null}
-              {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}
             </ul>
-          </form>
+            </form>
+            <p>City: {city.name}</p>
+            {city.sys ? <p>Country: {city.sys.country}</p> : null}
+            {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
+            {/* since we're trying to access a child element which temp is a child element of main, need to check if city.main is available and if so then continue to read the child elements */}
+            {city.main ? (
+              <p>Temperature feels like: {city.main.feels_like}°F</p>
+            ) : null}
+            {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}
+          
         </div>
       </div>
     </div>

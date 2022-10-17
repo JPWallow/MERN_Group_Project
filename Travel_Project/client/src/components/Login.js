@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import styles from "./Login.module.css";
 //temporary login page until Login and Reg is up
 const Login = () => {
     return (
