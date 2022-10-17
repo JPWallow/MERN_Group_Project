@@ -73,7 +73,7 @@ const AddDestination = (props) => {
           <div className={styles.header}>
             <ul>
 
-            {/* Will update logout link once Login/Reg is funtional */}
+              {/* Will update logout link once Login/Reg is funtional */}
               <li><Link className={styles.link} to="/dashboard">Dashboard</Link>{" "}</li>
               <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
               <li><Link className={styles.link} to="/community">Community</Link>  </li>

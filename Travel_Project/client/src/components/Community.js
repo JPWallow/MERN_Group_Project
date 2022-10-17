@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
@@ -23,7 +23,7 @@ const Community = (props) => {
     return (
         <div>
             <div>
-                 {/* Will update logout link once Login/Reg is funtional */}
+                {/* Will update logout link once Login/Reg is funtional */}
                 <Link to="/dashboard">Dashboard</Link> |
                 <Link to="/destinations/new">Add Your Destination</Link> |
                 <Link to="/">Logout</Link>
@@ -31,14 +31,14 @@ const Community = (props) => {
             <h1>Community Page</h1>
             <div>
                 <table>
-                    <thead> 
+                    <thead>
                         <th>Destination</th>
                         <th>Departed</th>
                         <th>Returned</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
-                        {destinationList.map((destination, index) => ( 
+                        {destinationList.map((destination, index) => (
                             <tr key={index}>
                                 <td>{destination.city}, {destination.country}</td>
                                 <td>{destination.departed}</td>

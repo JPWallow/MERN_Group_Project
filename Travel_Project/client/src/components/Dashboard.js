@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {  useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
-//Hi Dieu!
+
 const Dashboard = (props) => {
 
     const { removeFromDom, destinationList, setDestinationList } = props;
@@ -18,13 +18,13 @@ const Dashboard = (props) => {
             .catch((error) => {
                 console.log(error)
             })
-        
-        
+
+
     }, [])
 
     const deleteDestination = (destinationId) => {
         axios.delete(`http://localhost:8000/api/travel/${destinationId}`)
-                .then (res => {
+            .then(res => {
                 const newDestinationList = destinationList.filter((oneDestination) => oneDestination._id !== destinationId);
                 setDestinationList(newDestinationList);
             })
@@ -35,7 +35,7 @@ const Dashboard = (props) => {
         <div>
             <div>
                 {/* Will update to show user name once login is working */}
-                 {/* Will update logout link once Login/Reg is funtional */}
+                {/* Will update logout link once Login/Reg is funtional */}
                 <Link to="/destinations/new">Add Your Destination</Link> |
                 <Link to="/community">Community</Link> |
                 <Link to="/">Logout</Link>
@@ -43,14 +43,14 @@ const Dashboard = (props) => {
             <h1>Welcome, User!</h1>
             <div>
                 <table>
-                    <thead> 
+                    <thead>
                         <th>Destination</th>
                         <th>Departed</th>
                         <th>Returned</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
-                        {destinationList.map((destination, index) => ( 
+                        {destinationList.map((destination, index) => (
                             <tr key={index}>
                                 <td>{destination.city}, {destination.country}</td>
                                 <td>{destination.departed}</td>
@@ -58,9 +58,9 @@ const Dashboard = (props) => {
                                 {/* Will update with correct links */}
 
                                 <td>
-                                    <Link to={`/destinations/${destination._id}`}>Details</Link> 
-                                    <Link to={`/destinations/edit/${destination._id}`}>Edit</Link> 
-                                    <button onClick={(e)=>{deleteDestination(destination._id)}}>Delete</button>
+                                    <Link to={`/destinations/${destination._id}`}>Details</Link>
+                                    <Link to={`/destinations/edit/${destination._id}`}>Edit</Link>
+                                    <button onClick={(e) => { deleteDestination(destination._id) }}>Delete</button>
                                 </td>
                             </tr>
                         ))}
