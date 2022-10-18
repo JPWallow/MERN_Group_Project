@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Community from './components/Community';
 import EditDestination from './components/EditDestination';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
 
             {/* Current default page until login front end is complete */}
             <Route path="/" element={<Login />} />
+
+            <Route path="/register" element={<Register />} />
 
             <Route path="/dashboard" element={<Dashboard destinationList={destinationList} setDestinationList={setDestinationList} />} />
 
