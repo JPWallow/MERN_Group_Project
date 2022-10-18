@@ -1,0 +1,126 @@
+.header ul {
+    width: 100%;
+    padding: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+    margin: 0;
+    padding: 0;
+    text-decoration-style: none;
+    display: flex;
+    justify-content: end;
+    min-width: 120px;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+   }
+    
+   .header ul li:hover {
+    background: linear-gradient(165deg, #454c4d69 20%, #91e7c66b 70%);
+    border-radius: 50px;
+   }
+    
+   .header ul li {
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+   }
+    
+   .link {
+    position: relative;
+    margin: 0 20px;
+    color: #660925;
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+   }
+    
+   .nav {
+    text-align: center;
+   }
+    
+   .header {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 25px 0;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+   }
+    
+   .container {
+    text-align: left;
+    width: 100%;
+    height: auto;
+   }
+    
+   h3 {
+    padding-top: 30px;
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 2px 5px 10px rgba(12, 87, 2, 0.7);
+    width: 100%;
+    color: rgb(228, 116, 25);
+    margin: 0;
+    position: fixed;
+    overflow: hidden;
+   }
+    
+   .button:hover {
+    background: linear-gradient(165deg, #454c4d69 20%, #91e7c66b 70%);
+    color: rgb(190, 5, 5);
+    font-weight: bold;
+   }
+   .mainContainer {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: url("../images/ColosseuminRome-Italy.jpg");
+    text-align: center;
+    width: 100%;
+    height: 950px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+   }
+    
+   .table {
+    background: linear-gradient(165deg, #03303669 20%, #456d046b 70%);
+    font-size: 0.9em;
+    font-family: "Libre Baskerville", serif;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    margin: 130px auto;
+    font-size: 0.9em;
+    font-family: "Libre Baskerville", serif;
+    height: 650px;
+    overflow: hidden;
+    width: 100%;
+    color: rgb(245, 240, 240);
+    font-weight: bold;
+    font-size: larger;
+   }
+    
+   .Link {
+    text-decoration: none;
+    padding: 0 20px;
+    color: rgb(248, 124, 52);
+    font-weight: bold;
+    font-size: larger;
+   }
+    
+   .table thead th {
+    color: rgb(58, 236, 4);
+    padding: 30px 30px 30px 60px;
+    font-size: x-large;
+    font-weight: bolder;
+   }
+    
+   .table tbody tr td {
+    padding-left: 40px;
+   }
+    
+   .button {
+    margin: 0;
+   }
+   
