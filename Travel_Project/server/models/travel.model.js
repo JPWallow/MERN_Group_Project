@@ -11,8 +11,8 @@ const TravelSchema = new mongoose.Schema ({
     },
     country:{
         type:String,
-        required:[true,"Country is a required field"],
-        minlength:[3, "Country must be at least 3 characters long"]
+        // required:[true,"Country is a required field"],
+        // minlength:[3, "Country must be at least 3 characters long"]
     },
     departed:{
         type:Date,

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
+import countryData from '../countries.json';
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -19,6 +20,21 @@ const AddDestination = (props) => {
   const [errors, setErrors] = useState([]);
 
   const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
+
+  // country API
+  // useEffect(() =>{
+  //   const fetchData = async ()=>{
+  //     const response = await fetch(`https://restcountries.com/v3.1/all`)
+  //     const countryData = await response.json(); // all country data is stored in variable countryData
+  //     setCountry(countryData);
+  //     console.log(countryData);
+  //   };
+  //   fetchData();
+  // },[])
+
+  // const handleChange=(e)=>{
+  //   const setCountry= e.target.value;
+  // }
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -129,7 +145,20 @@ const AddDestination = (props) => {
               <li>
                 <label>Destination Country:</label>
                 <br />
-                <input
+                <select name="" id="" onChange={(e)=>
+                  {
+                    console.log(e.target.value)
+                    setCountry(e.target.value);
+                  }}>
+                  {
+                  countryData.map((getCountry, index) => (
+                    <option value={getCountry.name} key={index}>{getCountry.name}</option>
+
+                  ))
+                  }
+
+                </select>
+                {/* <input
                   type="text"
                   value={country}
                   name="country"
@@ -140,7 +169,7 @@ const AddDestination = (props) => {
                     console.log(e.target.value);
                     setCountry(e.target.value);
                   }}
-                />
+                /> */}
               </li>
               <li>
                 <label>Departed:</label>
