@@ -36,6 +36,14 @@ const Dashboard = (props) => {
   };
   
 
+  const handleLogout = async() => {
+    try {
+        const response = await axios.post("http://localhost:8000/api/logout")
+    }   catch (error) {
+        console.log(error.response);
+    };
+  };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
@@ -63,6 +71,7 @@ const Dashboard = (props) => {
                 </Link>
               </li>
             </ul>
+            <br/>
           <h1>Welcome, User!</h1>
           </div>
         </div>

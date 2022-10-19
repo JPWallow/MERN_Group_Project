@@ -7,28 +7,34 @@ import styles from "./Login.module.css";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     const [err, setErr] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr("");
-        const postData = { email, password };
         axios
-            .post("http://localhost:8000/api/login", postData, {
+            .post("http://localhost:8000/api/login", {
+                email: email,
+                password: password,
+            },
+            {
                 withCredentials: true,
-            })
+            }
+            )
             .then((response) => console.log(response))
+            navigate ("/dashboard")
             .catch((err) => console.log(err));
     };
+    // need this for logout in navbar
     const handleLogout = async() => {
         try {
-            const response = await axios.post("http://localhost:8000/logout")
+            const response = await axios.post("http://localhost:8000/api/logout")
         }   catch (error) {
             console.log(error.response);
-
-        }
+        };
 
         // axios
-            // .get("http://localhost:8000/logout")
+            // .get("http://localhost:8000/api/logout")
             // .then((response) => console.log(response))
             // .catch((err) => console.log(err));
     };
@@ -50,7 +56,6 @@ const Login = () => {
                 <input type="text" onChange={(e) => setPassword(e.target.value)} />
             </div>
             <button type="submit">Login</button>
-            <button onClick={() => handleLogout()}>LOGOUT</button>
         </form>
     );
 };

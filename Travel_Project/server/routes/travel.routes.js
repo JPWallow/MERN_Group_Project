@@ -1,4 +1,5 @@
-const TravelController = require('../controllers/travel.controller')
+const TravelController = require('../controllers/travel.controller');
+const { authenticate } = require('../config/jwt.config');
 
 const routes = (app) => {
     // Create

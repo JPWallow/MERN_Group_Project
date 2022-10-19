@@ -28,7 +28,7 @@ const TravelController = {
         })
     },
     getOne:(req, res)=> {
-        Travel.find({_id:req.params.id})
+        Travel.findOne({_id:req.params.id})
         .then((travel)=>{
             res.status(200).json(travel)
         })
