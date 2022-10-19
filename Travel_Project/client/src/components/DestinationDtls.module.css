@@ -1,0 +1,109 @@
+.header ul {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+    margin: 0;
+    padding: 0;
+    text-decoration-style: none;
+    display: flex;
+    justify-content: end;
+    min-width: 120px;
+   }
+    
+   .header ul li {
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+   }
+    
+   .header ul li:hover {
+    background-image: linear-gradient(135deg, #f0be6169 20%, #e686526b 70%);
+    border-radius: 50px;
+   }
+    
+   
+   .mainContainer {
+    background: url("../images/Victoria-Falls\ \(\ Zambia\).jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+  
+   }
+   .container {
+    text-align: left;
+    width: 100%;
+    height: auto;
+   }
+
+   .body{
+    display: flex;
+    flex-direction:column;
+   }
+   .link {
+    position: relative;
+    margin: 0 20px;
+    color: #873e23;
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+   }
+    
+   .header{
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    }
+   h1 {
+    padding-top: 30px;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    text-align: center;
+    color: #0b275c;
+    text-shadow: 2px 5px 10px rgba(203, 206, 45, 0.7);
+   }
+    
+   .button:hover {
+    background: linear-gradient(165deg, #454c4d69 20%, #91e7c66b 70%);
+    color: rgb(190, 5, 5);
+    font-weight: bold;
+      }
+
+   .weather {
+	width: 350px;
+	height: 150px;
+	overflow: hidden;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: 0px 30px 0 30px;
+	padding: 30px;
+	font-family: "Libre Baskerville", serif;
+    
+}
+
+    
+   .image{
+    width: auto;
+	height: auto;
+	overflow: hidden;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: 30px 30px 0 30px;
+	padding: 30px;
+	font-family: "Libre Baskerville", serif;
+   }
+   

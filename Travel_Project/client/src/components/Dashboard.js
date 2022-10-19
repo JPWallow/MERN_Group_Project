@@ -34,6 +34,7 @@ const Dashboard = (props) => {
       })
       .catch((err) => console.log(err));
   };
+  
 
   return (
     <div className={styles.mainContainer}>
@@ -67,7 +68,7 @@ const Dashboard = (props) => {
         </div>
         <div>
           <table className={styles.table}>
-            <thead className={styles.thead}>
+            <thead>
               <th >Destination</th>
               <th >Departed</th>
               <th >Returned</th>
@@ -75,7 +76,7 @@ const Dashboard = (props) => {
             </thead>
             <tbody >
               {destinationList.map((destination, index) => (
-                <tr key={index} className={styles.tr}>
+                <tr key={index} >
                   <td >
                     {destination.city}, {destination.country}
                   </td>

@@ -19,37 +19,8 @@ const AddDestination = (props) => {
 
   const [errors, setErrors] = useState([]);
 
-  const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
-
-  // country API
-  // useEffect(() =>{
-  //   const fetchData = async ()=>{
-  //     const response = await fetch(`https://restcountries.com/v3.1/all`)
-  //     const countryData = await response.json(); // all country data is stored in variable countryData
-  //     setCountry(countryData);
-  //     console.log(countryData);
-  //   };
-  //   fetchData();
-  // },[])
-
-  // const handleChange=(e)=>{
-  //   const setCountry= e.target.value;
-  // }
-
   const submitHandler = (e) => {
     e.preventDefault();
-    // placing the axios in the submitHandler event
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=imperial`
-      )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        setCity(res.data);
-      })
-      .catch((err) => console.log(err));
-
     axios
       .post("http://localhost:8000/api/travel", {
         city,
@@ -72,7 +43,7 @@ const AddDestination = (props) => {
         setDestinationList([...destinationList, res.data]);
       })
       .catch((err) => {
-        const errorResponse = err.response.data.errors;
+        const errorResponse = err.response.data.error.errors;
         const errorArr = [];
         for (const key of Object.keys(errorResponse)) {
           errorArr.push(errorResponse[key].message);
@@ -80,12 +51,14 @@ const AddDestination = (props) => {
         setErrors(errorArr);
       });
   };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
         <div className={styles.nav}>
           <div className={styles.header}>
-            <ul>
+
+            <ul >
               {/* Will update logout link once Login/Reg is funtional */}
               <li>
                 <Link className={styles.link} to="/dashboard">
@@ -141,35 +114,21 @@ const AddDestination = (props) => {
                   }}
                 />
               </li>
-              {/* Need to hard code countries for the dropdown input, standard text input for the meantime */}
               <li>
                 <label>Destination Country:</label>
                 <br />
-                <select name="" id="" onChange={(e)=>
+                <select className={styles.select} name="" id="" onChange={(e) => {
+                  console.log(e.target.value)
+                  setCountry(e.target.value);
+                }}>
                   {
-                    console.log(e.target.value)
-                    setCountry(e.target.value);
-                  }}>
-                  {
-                  countryData.map((getCountry, index) => (
-                    <option value={getCountry.name} key={index}>{getCountry.name}</option>
+                    countryData.map((getCountry, index) => (
+                      <option value={getCountry.name} key={index}>{getCountry.name}</option>
 
-                  ))
+                    ))
                   }
 
                 </select>
-                {/* <input
-                  type="text"
-                  value={country}
-                  name="country"
-                  className={styles.input}
-                  onChange={(e) => {
-                    console.log(e);
-                    console.log(e.target);
-                    console.log(e.target.value);
-                    setCountry(e.target.value);
-                  }}
-                /> */}
               </li>
               <li>
                 <label>Departed:</label>
@@ -241,16 +200,7 @@ const AddDestination = (props) => {
                 <button>Submit</button>
               </li>
             </ul>
-            </form>
-            <p>City: {city.name}</p>
-            {city.sys ? <p>Country: {city.sys.country}</p> : null}
-            {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
-            {/* since we're trying to access a child element which temp is a child element of main, need to check if city.main is available and if so then continue to read the child elements */}
-            {city.main ? (
-              <p>Temperature feels like: {city.main.feels_like}°F</p>
-            ) : null}
-            {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}
-          
+          </form>
         </div>
       </div>
     </div>

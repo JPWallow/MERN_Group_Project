@@ -1,0 +1,131 @@
+.header ul {
+  width: 100%;
+  padding: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  margin: 0;
+  padding: 0;
+  text-decoration-style: none;
+  display: flex;
+  justify-content: end;
+  min-width: 120px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+}
+
+.header ul li:hover {
+  background: linear-gradient(165deg, #454c4d69 20%, #2a7ba06b 70%);
+  border-radius: 50px;
+}
+
+.header ul li {
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+.link {
+  position: relative;
+  margin: 0 20px;
+  color: #660925;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
+
+.nav {
+  background: url("https://cf-images.us-east-1.prod.boltdns.net/v1/static/3281700261001/65cfeff3-ebd8-4c03-9417-8e4fe3f56f9f/5880e374-dae8-407f-bcf2-485eb93a2680/1280x720/match/image.jpg");
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 25px 0;
+}
+
+h3 {
+  padding-top: 30px;
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  text-align: center;
+  color: #0b275c;
+  text-shadow: 2px 5px 10px rgba(203, 206, 45, 0.7);
+}
+
+.button:hover {
+  background: linear-gradient(165deg, #454c4d69 20%, #2a6bc06b 70%);
+  color: rgb(190, 5, 5);
+  font-weight: bold;
+}
+
+.table {
+  background: url("../images/Colosseum-Italy.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-family: "Libre Baskerville", serif;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+  height: 700px;
+  overflow: hidden;
+  width: 100%;
+  font: italic bold 16px Georgia, serif;
+ 
+}
+
+.Link {
+  text-decoration: none;
+  padding: 0 20px;
+  color: rgb(238, 115, 15);
+  font-weight: bold;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+
+  
+}
+.table tbody tr:nth-of-type(odd) {
+    background: linear-gradient(165deg, #5e7e8369 20%, #618fb46b 70%);
+  }
+  
+  .table tbody tr:nth-of-type(even) {
+    background: linear-gradient(165deg, #d8eaec69 20%, #9cb5da6b 70%);
+  }
+  
+ 
+
+.table thead th {
+    background: linear-gradient( #06f77269 70%);
+  color: #0b275c;
+  padding: 30px 30px 30px 0px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.table tbody tr td {
+ 
+  font-size: large;
+  color: #f8f4f5;
+  font-weight: bold;
+  padding: 20px 0 20px 0px;
+}
+
+.button {
+  margin: 0;
+  background-color: rgb(243, 116, 94);
+  color: white;
+  font-weight: bold;
+}

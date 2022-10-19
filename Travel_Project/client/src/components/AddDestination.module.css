@@ -13,8 +13,7 @@
 }
 
 .header ul li {
-  line-height: 60px;
-  text-align: center;
+  line-height: 40px;
   display: inline-block;
 }
 
@@ -29,15 +28,10 @@
   background-position: center;
   background-size: cover;
   position: fixed;
-  top: 50%;
-  left: 50%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  transform: translateX(-50%) translateY(-50%);
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+
 }
 .container {
   text-align: left;
@@ -54,19 +48,27 @@
   text-decoration: none;
 }
 
+.header {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+}
+
 .body {
   margin: auto;
   font-size: 18px;
   font-family: serif;
 }
 
-h1 {
+h2 {
   font-family: "Dancing Script", cursive;
   font-size: 60px;
   text-align: center;
   color: #206475;
   text-shadow: 2px 5px 10px rgba(228, 225, 36, 0.7);
 }
+
+
 
 button {
   border: none;
@@ -80,6 +82,7 @@ button {
   font-family: serif;
   font-size: large;
 }
+
 
 button:hover {
   background-image: linear-gradient(135deg, #c17aec69 20%, #e686526b 70%);
@@ -135,6 +138,14 @@ button:hover {
 }
 
 .form ul li .input:focus {
+  box-shadow: 0 0 5px #b0cfe0;
+  border: 1px solid #b0cfe0;
+}
+
+.select {
+  padding: 5px;
+  outline: none;
+  width: 100%;
   box-shadow: 0 0 5px #b0cfe0;
   border: 1px solid #b0cfe0;
 }
