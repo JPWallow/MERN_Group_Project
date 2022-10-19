@@ -124,10 +124,8 @@ const AddDestination = (props) => {
                   {
                     countryData.map((getCountry, index) => (
                       <option value={getCountry.name} key={index}>{getCountry.name}</option>
-
                     ))
                   }
-
                 </select>
               </li>
               <li>
