@@ -85,7 +85,8 @@ const AddDestination = (props) => {
       <div className={styles.container}>
         <div className={styles.nav}>
           <div className={styles.header}>
-            <ul>
+
+            <ul >
               {/* Will update logout link once Login/Reg is funtional */}
               <li>
                 <Link className={styles.link} to="/dashboard">
@@ -111,6 +112,7 @@ const AddDestination = (props) => {
                 </Link>
               </li>
             </ul>
+         
           </div>
           <h1>Add Your Destination</h1>
         </div>
@@ -145,7 +147,7 @@ const AddDestination = (props) => {
               <li>
                 <label>Destination Country:</label>
                 <br />
-                <select name="" id="" onChange={(e)=>
+                <select className={styles.select} name="" id="" onChange={(e)=>
                   {
                     console.log(e.target.value)
                     setCountry(e.target.value);
