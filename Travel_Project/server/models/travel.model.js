@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const TravelSchema = new mongoose.Schema ({
     city:{
         type:String,
-        required:[true,"Destination is a required field"], 
-        minlength:[3, "Destination must be at least 3 characters long"]
+        required:[true,"City is a required field"], 
+        minlength:[3, "City must be at least 3 characters long"]
     },
     country:{
         type:String,
