@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-
+import dateFormat from 'dateformat';
 import styles from "./DestinationDtls.module.css";
 
 const DestinationDtls = (props) => {
   // const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
 
   const { id } = useParams();
-
+  
   const [oneDestination, setOneDestination] = useState({});
 
   useEffect(() => {
@@ -96,8 +96,8 @@ const DestinationDtls = (props) => {
               </div>
 
               <div >
-                <p>Departed: {oneDestination.departed}</p>
-                <p>Returned: {oneDestination.returned}</p>
+                <p>Departed: {dateFormat(oneDestination.departed, "dddd, mmmm dS, yyyy")}</p>
+                <p>Returned: {dateFormat(oneDestination.returned, "dddd, mmmm dS, yyyy")}</p>
               </div>
             </div>
             <div className={styles.image}>

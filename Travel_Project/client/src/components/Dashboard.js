@@ -71,6 +71,7 @@ const Dashboard = (props) => {
                 </Link>
               </li>
             </ul>
+            <br/>
           <h1>Welcome, User!</h1>
           </div>
         </div>
