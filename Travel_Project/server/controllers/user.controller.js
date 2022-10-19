@@ -26,7 +26,6 @@ const register = async (req, res) => {
     }
     const result = await User.create(body);
     console.log("result", result);
-    res.json({ msg: "you got here" });
 };
 
 const login = async (req, res) => {
