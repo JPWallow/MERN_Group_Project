@@ -112,6 +112,7 @@ const EditDestination = (props) => {
                                     console.log(e.target.value)
                                     setCountry(e.target.value);
                                 }}>
+                                    <option value={country} selected>{country}</option>
                                     {
                                         countryData.map((getCountry, index) => (
                                             <option value={getCountry.name} key={index}>{getCountry.name}</option>
@@ -153,7 +154,7 @@ const EditDestination = (props) => {
                                 <label>Upload a picture:</label><br />
                                 <input
                                     type="file"
-                                    value={boxArt}
+                                    value={""}
                                     name="boxArt"
                                     id="image-input"
                                     accept="image/jpeg, image/png, image/jpg"
