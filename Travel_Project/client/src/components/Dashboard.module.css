@@ -36,12 +36,12 @@
   
  .nav {
   background: url("../images/Victoria-Falls\ \(\ Zambia\).jpg");
-  text-align: center;
-  width: 100%;
-  height: auto;
   background-size: cover;
   position: relative;
   overflow: hidden;
+  height: auto;
+  width: 100%;
+  
  }
   
  .header {
@@ -127,4 +127,3 @@
   color: white;
   font-weight: bold;
  }
- 
