@@ -7,7 +7,8 @@ import styles from "./DestinationDtls.module.css";
 const DestinationDtls = (props) => {
 
   // const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
-  const API_Key = "5908dbda86bf240becb1c087c429bf56";
+  // const API_Key = "5908dbda86bf240becb1c087c429bf56";
+  const API_Key = "4bc21aaebf9f7c32fef08288682c9c6d";
 
 
   const { id } = useParams();
