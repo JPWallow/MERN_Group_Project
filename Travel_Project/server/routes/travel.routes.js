@@ -1,8 +1,9 @@
-const TravelController = require('../controllers/travel.controller')
+const TravelController = require('../controllers/travel.controller');
+const { authenticate } = require('../config/jwt.config');
 
 const routes = (app) => {
     // Create
-    app.post('/api/travel', TravelController.create)
+    app.post('/api/travel', authenticate, TravelController.create)
 
     // Read
     app.get('/api/travel',TravelController.getAll)
