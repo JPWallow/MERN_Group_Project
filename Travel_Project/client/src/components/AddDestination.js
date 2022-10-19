@@ -19,7 +19,7 @@ const AddDestination = (props) => {
 
   const [errors, setErrors] = useState([]);
 
-  const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
+  // const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
 
   // country API
   // useEffect(() =>{
@@ -39,16 +39,16 @@ const AddDestination = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     // placing the axios in the submitHandler event
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=imperial`
-      )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        setCity(res.data);
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   .get(
+    //     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=imperial`
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //     setCity(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
 
     axios
       .post("http://localhost:8000/api/travel", {
@@ -242,15 +242,15 @@ const AddDestination = (props) => {
               </li>
             </ul>
             </form>
-            <p>City: {city.name}</p>
+            {/* <p>City: {city.name}</p>
             {city.sys ? <p>Country: {city.sys.country}</p> : null}
-            {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
+            {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "} */}
             {/* since we're trying to access a child element which temp is a child element of main, need to check if city.main is available and if so then continue to read the child elements */}
-            {city.main ? (
+            {/* {city.main ? (
               <p>Temperature feels like: {city.main.feels_like}°F</p>
             ) : null}
             {city.weather ? <p>Weather: {city.weather[0].main}</p> : null}
-          
+           */}
         </div>
       </div>
     </div>
