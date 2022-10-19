@@ -80,6 +80,7 @@ const AddDestination = (props) => {
         setErrors(errorArr);
       });
   };
+  
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
