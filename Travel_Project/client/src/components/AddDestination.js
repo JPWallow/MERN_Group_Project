@@ -72,7 +72,7 @@ const AddDestination = (props) => {
         setDestinationList([...destinationList, res.data]);
       })
       .catch((err) => {
-        const errorResponse = err.response.data.errors;
+        const errorResponse = err.response.data.error.errors;
         const errorArr = [];
         for (const key of Object.keys(errorResponse)) {
           errorArr.push(errorResponse[key].message);
