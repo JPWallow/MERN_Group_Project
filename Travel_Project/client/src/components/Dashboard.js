@@ -34,6 +34,7 @@ const Dashboard = (props) => {
       })
       .catch((err) => console.log(err));
   };
+  
 
   const handleLogout = async() => {
     try {

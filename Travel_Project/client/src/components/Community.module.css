@@ -25,6 +25,8 @@
   display: inline-block;
 }
 
+
+
 .link {
   position: relative;
   margin: 0 20px;
@@ -66,7 +68,7 @@ h3 {
 }
 
 .table {
-  background: url("../images/ColosseuminRome-Italy.jpg");
+  background: url("../images/Colosseum-Italy.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
