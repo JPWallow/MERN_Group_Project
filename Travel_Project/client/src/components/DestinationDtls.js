@@ -84,7 +84,6 @@ const DestinationDtls = (props) => {
           <div className={styles.body}>
             <div className={styles.weather}>
               <div>
-                <p>City: {city.name}</p>
                 {city.sys ? <p>Country: {city.sys.country}</p> : null}
                 {city.main ? <p>Temperature: {city.main.temp}°F</p> : null}{" "}
                 {city.main ? (
@@ -99,7 +98,7 @@ const DestinationDtls = (props) => {
               </div>
             </div>
             <div className={styles.image}>
-              <img src={`${oneDestination.boxArt}`} />
+              <img src={`${oneDestination.boxArt}`} alt={`${oneDestination.boxArt}`} />
               <p>Comments: {oneDestination.comments}</p>
             </div>
           </div>
