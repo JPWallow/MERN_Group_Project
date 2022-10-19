@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./EditDestination.module.css";
+import countryData from '../countries.json';
 
 const EditDestination = (props) => {
 
@@ -15,6 +16,8 @@ const EditDestination = (props) => {
     const [comments, setComments] = useState("");
 
     const navigate = useNavigate();
+
+    const [errors, setErrors] = useState([]);
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/travel/${id}`)
@@ -31,7 +34,8 @@ const EditDestination = (props) => {
             .catch(err => console.log(err))
     }, [id])
 
-    const updateOne = (e) => {
+    const editHandler = (e) => {
+        // const updateOne = (e) => {
         e.preventDefault();
         axios.put(`http://localhost:8000/api/travel/edit/${id}`, {
             city,
@@ -46,9 +50,16 @@ const EditDestination = (props) => {
                 console.log(res.data);
                 navigate("/dashboard");
             })
-            .catch(err => console.log(err))
-    }
-
+            .catch((err) => {
+                const errorResponse = err.response.data.error.errors;
+                const errorArr = [];
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message);
+                }
+                setErrors(errorArr);
+            });
+        // }
+    };
 
     return (
         <div className={styles.mainContainer}>
@@ -68,15 +79,15 @@ const EditDestination = (props) => {
                     <h1>Edit Your Destination</h1>
                 </div>
                 <div className={styles.body}>
-                    <form onSubmit={updateOne} className={styles.form}>
+                    <form onSubmit={editHandler} className={styles.form}>
                         <ul>
 
                             <li className={styles.validation}>
-                                {/* {errors.map((err, index) => (
-                            <p style={{ color: "red" }} key={index}>
-                                {err}
-                            </p>
-                            ))} */}
+                                {errors.map((err, index) => (
+                                    <p style={{ color: "red" }} key={index}>
+                                        {err}
+                                    </p>
+                                ))}
                             </li>
                             <li>
                                 <label>City:</label><br />
@@ -95,19 +106,18 @@ const EditDestination = (props) => {
                             </li>
                             {/* Need to hard code countries for the dropdown input, standard text input for the meantime */}
                             <li>
-                                <label>Destination Country:</label><br />
-                                <input
-                                    type="text"
-                                    value={country}
-                                    name="country"
-                                    className={styles.input}
-                                    onChange={(e) => {
-                                        console.log(e);
-                                        console.log(e.target);
-                                        console.log(e.target.value);
-                                        setCountry(e.target.value);
-                                    }}
-                                />
+                                <label>Destination Country:</label>
+                                <br />
+                                <select className={styles.select} name="" id="" onChange={(e) => {
+                                    console.log(e.target.value)
+                                    setCountry(e.target.value);
+                                }}>
+                                    {
+                                        countryData.map((getCountry, index) => (
+                                            <option value={getCountry.name} key={index}>{getCountry.name}</option>
+                                        ))
+                                    }
+                                </select>
                             </li>
                             <li>
                                 <label>Departed:</label><br />
