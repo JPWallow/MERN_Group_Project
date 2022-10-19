@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./EditDestination.module.css";
+import dateFormat from 'dateformat';
 import countryData from '../countries.json';
 
 const EditDestination = (props) => {
@@ -16,6 +17,9 @@ const EditDestination = (props) => {
     const [comments, setComments] = useState("");
 
     const navigate = useNavigate();
+
+    const departedDate = dateFormat(departed, "yyyy-mm-d"); 
+    const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
 
     const [errors, setErrors] = useState([]);
 
@@ -112,7 +116,7 @@ const EditDestination = (props) => {
                                     console.log(e.target.value)
                                     setCountry(e.target.value);
                                 }}>
-                                    <option value={country} selected>{country}</option>
+                                    <option defaultValue={country}>{country}</option>
                                     {
                                         countryData.map((getCountry, index) => (
                                             <option value={getCountry.name} key={index}>{getCountry.name}</option>
@@ -124,7 +128,7 @@ const EditDestination = (props) => {
                                 <label>Departed:</label><br />
                                 <input
                                     type="date"
-                                    value={departed}
+                                    value={departedDate}
                                     name="departed"
                                     className={styles.input}
                                     onChange={(e) => {
@@ -139,7 +143,7 @@ const EditDestination = (props) => {
                                 <label>Returned:</label><br />
                                 <input
                                     type="date"
-                                    value={returned}
+                                    value={returnedDate}
                                     name="returned"
                                     className={styles.input}
                                     onChange={(e) => {
