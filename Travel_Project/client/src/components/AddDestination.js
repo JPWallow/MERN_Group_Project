@@ -194,8 +194,8 @@ const AddDestination = (props) => {
                   value={boxArt}
                   name="boxArt"
                   id="image-input"
-                  accept="image/*"
-                  // accept="image/jpeg, image/png, image/jpg"
+                  // accept="image/*"
+                  accept="image/jpeg, image/png, image/jpg"
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
