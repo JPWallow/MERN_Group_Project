@@ -73,7 +73,7 @@ const Dashboard = (props) => {
               </li>
             </ul>
             <br/>
-              <h1>Welcome, </h1>
+              <h1>Welcome to Wanderlust Weblog! </h1>
           </div>
         </div>
         <div>
