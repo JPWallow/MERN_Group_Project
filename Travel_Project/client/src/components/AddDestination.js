@@ -203,11 +203,11 @@ const AddDestination = (props) => {
                   placeholder="upload image"
                   isRequired={true} */}
                 <input // Original Form Code
-                  type="file"
+                  type="text"
                   value={boxArt}
                   name="boxArt"
-                  id="image-input"
-                  accept="image/jpeg, image/png, image/jpg"  
+                  // id="image-input"
+                  // accept="image/jpeg, image/png, image/jpg"  
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
