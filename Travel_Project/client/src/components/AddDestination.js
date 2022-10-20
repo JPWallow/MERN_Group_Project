@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
 import countryData from '../countries.json';
-import io from 'socket.io-client';
+import CustomInput from "./CustomInput";
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -15,69 +15,58 @@ const AddDestination = (props) => {
   const [returned, setReturned] = useState("");
   const [boxArt, setBoxArt] = useState("");
   const [comments, setComments] = useState("");
-  // const [boxArtData, setBoxArtData] = useState(); //For new image upload
   const navigate = useNavigate();
-
   const [errors, setErrors] = useState([]);
-  
-  // async function submitHandler(e) {
 
-  // const handleBoxArtChange = ({target}) => { //For new image upload
-  //   setBoxArtData(target.files[0]);
-  //   setBoxArt(target.value);
+  // const [boxArtData, setBoxArtData] = useState(); // File Upload Code
 
-  // }
-  // const submitHandler = async (e) => {
-
-  //   e.preventDefault();
-
-  //   const formdata = new FormData();
-
-  //   formdata.append("image", boxArtData);
-
-  //   await Axios.post("http://localhost:8000/api/travel", formdata)
-  //     .then((res) => console.log("res", res.data))
-  //     .catch((error) => console.error(error))
-  // };
+  //   const handleBoxArtChange = ({ target }) => { // File Upload Code
+  //     setBoxArtData(target.files[0]);
+  //     setBoxArt(target.value);
+  //   };
 
 
-  const submitHandler = (e) => { // Original Form Code
-    e.preventDefault();
-    axios
-      .post("http://localhost:8000/api/travel", 
-      {
-        city,
-        country,
-        departed,
-        returned,
-        boxArt,
-        comments,
-      },
-      {
-        withCredentials: true
-      })
+    const submitHandler = (e) => { // Original Form Code
+      e.preventDefault();
+      axios
+        .post("http://localhost:8000/api/travel",
+          {
+            city,
+            country,
+            departed,
+            returned,
+            boxArt,
+            comments,
+          },
+          {
+            withCredentials: true
+          })
 
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        navigate("/dashboard");
-        setCity("");
-        setCountry("");
-        setDeparted("");
-        setReturned("");
-        setBoxArt("");
-        setComments("");
-        setDestinationList([...destinationList, res.data]);
-      })
-      .catch((err) => {
-        const errorResponse = err.response.data.error.errors;
-        const errorArr = [];
-        for (const key of Object.keys(errorResponse)) {
-          errorArr.push(errorResponse[key].message);
-        }
-        setErrors(errorArr);
-      });
-  };
+        .then((res) => {
+          console.log(res);
+          console.log(res.data);
+          navigate("/dashboard");
+          setCity("");
+          setCountry("");
+          setDeparted("");
+          setReturned("");
+          setBoxArt("");
+          setComments("");
+          setDestinationList([...destinationList, res.data]);
+        })
+        .catch((err) => {
+          const errorResponse = err.response.data.error.errors;
+          const errorArr = [];
+          for (const key of Object.keys(errorResponse)) {
+            errorArr.push(errorResponse[key].message);
+          }
+          setErrors(errorArr);
+        });
+        
+      // axios.post("http://localhost:8000/api/travel", boxArtData)// File Upload Code (change api link when backend links to photo cloud)
+      // .then((res) => console.log("res", res.data))
+      // .catch((error) => console.error(error))
+    };
 
   return (
     <div className={styles.mainContainer}>
@@ -192,22 +181,22 @@ const AddDestination = (props) => {
               <li>
                 <label>Upload a picture:</label>
                 <br />
-                {/* <CustomInput  //For new image upload
+                {/* <CustomInput // File Upload Code
                   type="file"
                   value={boxArt}
-                  name="boxArt"
-                  id="image-input"
                   className={styles.input}
+                  name="file"
                   accept="image/*"
                   onChange={handleBoxArtChange}
                   placeholder="upload image"
-                  isRequired={true} */}
-                <input // Original Form Code
+                  isRequired={true}
+                /> */}
+                <input // Picture HTML Upload Code
                   type="text"
                   value={boxArt}
                   name="boxArt"
-                  // id="image-input"
-                  // accept="image/jpeg, image/png, image/jpg"  
+                  id="image-input"
+                  accept="image/jpeg, image/png, image/jpg"  
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
