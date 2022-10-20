@@ -65,7 +65,8 @@ const login = async (req, res) => {
     }).json({ msg: "successful login"});
 };
 
-const logout = async (req, res) => {
+const logout = (req, res) => {
+    console.log("Logged out!");
     res.clearCookie("usertoken");
     res.json({ msg: "logout successful"});
 };
