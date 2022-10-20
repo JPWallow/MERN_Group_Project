@@ -47,6 +47,7 @@ const Community = (props) => {
                                 </Link>
                             </li>
                         </ul>
+                        <br/>
                         <h3>Community Page</h3>
                     </div>
                 </div>

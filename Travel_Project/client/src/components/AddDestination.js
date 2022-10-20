@@ -18,6 +18,22 @@ const AddDestination = (props) => {
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState([]);
+  
+  // async function submitHandler(e) {
+  //   e.preventDefault();
+  //   try{
+  //     let imageUrl= "";
+  //     if(boxArt) {
+  //       const formData = new FormData();
+  //       formData.append("file", boxArt);
+  //       formData.append("upload_preset", "presentName");
+  //       const dataRes = await axios.post(
+  //         "yourUrl",
+  //         formData
+  //       );
+  //       imageUrl = dataRes.data.url;
+  //     }
+  //   }
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -165,19 +181,20 @@ const AddDestination = (props) => {
               <li>
                 <label>Upload a picture:</label>
                 <br />
-                <input type="text" 
+                {/* <input type="text" 
                   value={boxArt}
                   onChange={(e) => {
                     console.log(e);
                     console.log(e.target);
                     console.log(e.target.value);
                     setBoxArt(e.target.value);
-                  }}/>
-                {/* <input
+                  }}/> */}
+                <input
                   type="file"
                   value={boxArt}
                   name="boxArt"
                   id="image-input"
+                  // accept="image/*"
                   accept="image/jpeg, image/png, image/jpg"
                   className={styles.input}
                   onChange={(e) => {
@@ -185,8 +202,9 @@ const AddDestination = (props) => {
                     console.log(e.target);
                     console.log(e.target.value);
                     setBoxArt(e.target.value);
+                    // setBoxArt(e.target.files[0]);
                   }}
-                /> */}
+                />
               </li>
               <li>
                 <label>Comments:</label>
