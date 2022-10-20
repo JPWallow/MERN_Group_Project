@@ -106,6 +106,17 @@ const DestinationDtls = (props) => {
             <div className={styles.image}>
               <img src={`${oneDestination.boxArt}`} alt={`${oneDestination.boxArt}`} />
               <p>Comments: {oneDestination.comments}</p>
+              {
+                oneDestination.createdbyUser ?
+                  (
+                    <div>
+                      User's ID: { oneDestination.createdByUser._id }
+                      <br />
+                      User's Name: { oneDestination.createdByUser.email }
+                    </div>
+                  )
+                  : null
+              }
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 const Travel = require('../models/travel.model');
+const jwt = require('jsonwebtoken');
 
 const TravelController = {
 
@@ -6,9 +7,20 @@ const TravelController = {
 
       // Eddie was here
 
-    // Create a travel desination
+    // Create a travel destination
     create:(req, res)=>{
-        Travel.create(req.body)
+        console.log(req.body)
+        const decodedJwt = jwt.decode(req.cookies.usertoken, { complete: true });
+        const userId = decodedJwt.payload.user_id;
+
+        // create the normal destination object from what was passed in
+        const travel = new Travel(req.body);
+
+        // now add the new creaedBy key in the object and give it the value of this User's ID
+        // that was stored in our encoded cookie
+        travel.createdByUser = userId;
+
+        Travel.create(travel)
         .then((travel)=>{
             res.status(201).json(travel);
         })
@@ -20,6 +32,7 @@ const TravelController = {
     // Read
     getAll:(req, res)=>{
         Travel.find({})
+        .populate("createdByUser", "email")
         .then((travel)=>{
             res.status(200).json(travel)
         })
@@ -29,6 +42,7 @@ const TravelController = {
     },
     getOne:(req, res)=> {
         Travel.findOne({_id:req.params.id})
+        .populate("createdByUser", "email")
         .then((travel)=>{
             res.status(200).json(travel)
         })

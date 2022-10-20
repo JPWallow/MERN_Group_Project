@@ -56,7 +56,7 @@ const login = async (req, res) => {
         res.status(400).json({ error: "email and password do not match" });
     }
 
-    const userToken = jwt.sign({ id: userQuery._id }, process.env.SECRET_KEY);
+    const userToken = jwt.sign({ user_id: userQuery._id, email: userQuery.email}, process.env.SECRET_KEY);
     console.log("token", userToken);
 
     res.cookie("usertoken", userToken, process.env.SECRET_KEY, {
