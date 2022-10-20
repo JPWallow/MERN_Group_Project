@@ -26,10 +26,10 @@ Technologies
  
 Contributers
 -----------
-  -Joshua Wallowitch
-  
-  -Renee Ishikawa
-  
-  -Dieu Ha
-  
-  -Edward Griffin
+-Dieu Ha (CSS)
+
+-Edward Griffin (Login/Registration)
+
+-Renee Ishikawa (Travel App Backend)
+
+-Joshua Wallowitch (Travel App Frontend)
