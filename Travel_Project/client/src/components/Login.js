@@ -53,10 +53,10 @@ const Login = () => {
         <div className={styles.login}>
           <form onSubmit={handleSubmit}>
             <h3>Login</h3>
-            <Link className={styles.link} to="/dashboard">
+            {/* <Link className={styles.link} to="/dashboard">
               {" "}
               Dashboard{" "}
-            </Link>
+            </Link> */}
 
             <div>
               <br />

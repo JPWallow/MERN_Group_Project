@@ -38,7 +38,7 @@ const Register = () => {
         <div className={styles.main}>
           <div className={styles.register}>
             <h1>Register</h1>
-
+            {err && <p style={{ color: "red" }}>{err}</p>}
             <div>
               <div className={styles.input}>
                 <input
@@ -92,8 +92,6 @@ const Register = () => {
                 Login Here!{" "}
               </Link>
             </div>
-
-            {err && <h3 style={{ color: "red" }}>{err}</h3>}
           </div>
         </div>
       </div>
