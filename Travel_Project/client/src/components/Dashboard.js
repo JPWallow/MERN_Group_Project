@@ -5,10 +5,13 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./Dashboard.module.css";
 import dateFormat from 'dateformat';
+import io from 'socket.io-client';
 
 const Dashboard = (props) => {
   const { removeFromDom, destinationList, setDestinationList } = props;
   const navigate = useNavigate();
+  const [ socket, setSocket ] = useState( () => io(":8000") );
+  const [firstName, setFirstName] = useState("");
 
   useEffect(() => {
     axios
@@ -72,7 +75,7 @@ const Dashboard = (props) => {
               </li>
             </ul>
             <br/>
-          <h1>Welcome, User!</h1>
+              <h1>Welcome, </h1>
           </div>
         </div>
         <div>
@@ -84,7 +87,7 @@ const Dashboard = (props) => {
               <th >Actions</th>
             </thead>
             <tbody >
-              {destinationList.map((destination, index) => (
+            {destinationList.map((destination, index) => (
                 <tr key={index} >
                   <td >
                     {destination.city}, {destination.country}

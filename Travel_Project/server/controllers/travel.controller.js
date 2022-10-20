@@ -32,7 +32,7 @@ const TravelController = {
     // Read
     getAll:(req, res)=>{
         Travel.find({})
-        .populate("createdByUser", "email")
+        .populate("createdByUser", "firstName")
         .then((travel)=>{
             res.status(200).json(travel)
         })
@@ -42,7 +42,6 @@ const TravelController = {
     },
     getOne:(req, res)=> {
         Travel.findOne({_id:req.params.id})
-        .populate("createdByUser", "email")
         .then((travel)=>{
             res.status(200).json(travel)
         })

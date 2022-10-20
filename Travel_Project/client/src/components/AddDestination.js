@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
 import countryData from '../countries.json';
+import io from 'socket.io-client';
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -18,6 +19,8 @@ const AddDestination = (props) => {
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState([]);
+  
+  // async function submitHandler(e) {
 
   // const handleBoxArtChange = ({target}) => { //For new image upload
   //   setBoxArtData(target.files[0]);
@@ -25,6 +28,7 @@ const AddDestination = (props) => {
 
   // }
   // const submitHandler = async (e) => {
+
   //   e.preventDefault();
 
   //   const formdata = new FormData();
@@ -40,17 +44,19 @@ const AddDestination = (props) => {
   const submitHandler = (e) => { // Original Form Code
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/travel",
-        {
-          city,
-          country,
-          departed,
-          returned,
-          boxArt,
-          comments,
+      .post("http://localhost:8000/api/travel", 
+      {
+        city,
+        country,
+        departed,
+        returned,
+        boxArt,
+        comments,
+      },
+      {
+        withCredentials: true
+      })
 
-          withCredentials: true  //token validation check
-        })
       .then((res) => {
         console.log(res);
         console.log(res.data);
