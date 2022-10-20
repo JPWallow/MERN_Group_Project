@@ -1,14 +1,13 @@
-# Wanderlust Weblog Project
-Heading
+Wanderlust Weblog Project
 =======
-
-Sub-heading
+Purpose
+-----------
+Stack
+-----------
+Technologies
+-----------
+Contributers
 -----------
 
-# Alternative heading #
 
-Paragraphs are separated 
-by a blank line.
 
-Two spaces at the end of a line  
-produce a line break.
