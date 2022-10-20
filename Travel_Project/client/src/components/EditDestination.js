@@ -4,7 +4,6 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./EditDestination.module.css";
 import dateFormat from 'dateformat';
 import countryData from '../countries.json';
-import io from 'socket.io-client';
 
 const EditDestination = (props) => {
 
@@ -23,8 +22,6 @@ const EditDestination = (props) => {
     const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
 
     const [errors, setErrors] = useState([]);
-
-    const [ socket, setSocket ] = useState( () => io(":8000") );
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/travel/${id}`)
