@@ -34,6 +34,9 @@ const Register = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.container}>
+      <div>
+        <h2>Wanderlust Weblog </h2>
+      </div>
         <div className={styles.main}>
           <div className={styles.register}>
             <h1>Register</h1>
@@ -66,7 +69,7 @@ const Register = () => {
 
               <div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -74,7 +77,7 @@ const Register = () => {
 
               <div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Confirm Password"
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
