@@ -23,16 +23,20 @@ const Login = () => {
           withCredentials: true,
         }
       )
-      .then((response) => console.log(response));
-    navigate("/dashboard").catch((err) => console.log(err));
+      .then((response) => console.log(response))
+      navigate ("/dashboard")
+      .catch((err) => console.log(err));
   };
   // need this for logout in navbar
-  const handleLogout = async () => {
+  const handleLogout = async() => {
     try {
-      const response = await axios.post("http://localhost:8000/api/logout");
+      console.log('logged out')
+      const response = await axios.get("http://localhost:8000/api/logout", {
+        withCredentials: true 
+      })
     } catch (error) {
       console.log(error.response);
-    }
+    };
 
     // axios
     // .get("http://localhost:8000/api/logout")
