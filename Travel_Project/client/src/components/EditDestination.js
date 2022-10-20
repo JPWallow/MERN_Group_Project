@@ -157,8 +157,8 @@ const EditDestination = (props) => {
                             <li>
                                 <label>Upload a picture:</label><br />
                                 <input
-                                    type="file"
-                                    value={""}
+                                    type="text"
+                                    value={boxArt}
                                     name="boxArt"
                                     id="image-input"
                                     accept="image/jpeg, image/png, image/jpg"
