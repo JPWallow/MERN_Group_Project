@@ -177,7 +177,7 @@ const EditDestination = (props) => {
                                     type="textarea"
                                     value={comments}
                                     name="comments"
-                                    className={styles.input}
+                                    className={styles.inputTextarea}
                                     onChange={(e) => {
                                         console.log(e);
                                         console.log(e.target);
