@@ -85,7 +85,7 @@ const AddDestination = (props) => {
               </li>
             </ul>
           </div>
-          <h1>Add Your Destination</h1>
+          <h4>Add Your Destination</h4>
         </div>
 
         <div className={styles.body}>
