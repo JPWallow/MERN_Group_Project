@@ -13,17 +13,17 @@ Purpose
 
 Technologies
 -----------
-MongoDB
-Express
-React
-Node.js
-Cloudinary
+-MongoDB
+-Express
+-React
+-Node.js
+-Cloudinary
 
 Contributers
 -----------
-Joshua Wallowitch
-Renee Ishikawa
-Dieu Ha
-Edward Griffin
+-Joshua Wallowitch
+-Renee Ishikawa
+-Dieu Ha
+-Edward Griffin
 
 
