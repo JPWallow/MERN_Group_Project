@@ -5,12 +5,10 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./Dashboard.module.css";
 import dateFormat from 'dateformat';
-import io from 'socket.io-client';
 
 const Dashboard = (props) => {
   const { removeFromDom, destinationList, setDestinationList } = props;
   const navigate = useNavigate();
-  const [ socket, setSocket ] = useState( () => io(":8000") );
   const [firstName, setFirstName] = useState("");
 
   useEffect(() => {

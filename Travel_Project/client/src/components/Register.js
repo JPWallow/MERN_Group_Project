@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
-import io from 'socket.io-client';
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,7 +12,6 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [err, setErr] = useState("");
   const navigate = useNavigate();
-  const [ socket, setSocket ] = useState( () => io(":8000") );
   const handleSubmit = async (e) => {
     e.preventDefault();
     const postData = {

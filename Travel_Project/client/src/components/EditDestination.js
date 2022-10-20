@@ -4,7 +4,6 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./EditDestination.module.css";
 import dateFormat from 'dateformat';
 import countryData from '../countries.json';
-import io from 'socket.io-client';
 
 const EditDestination = (props) => {
 

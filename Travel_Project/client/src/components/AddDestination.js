@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
 import countryData from '../countries.json';
-import io from 'socket.io-client';
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;
@@ -20,7 +19,6 @@ const AddDestination = (props) => {
 
   const [errors, setErrors] = useState([]);
 
-  const [ socket, setSocket ] = useState( () => io(":8000") );
   
   // async function submitHandler(e) {
   //   e.preventDefault();
