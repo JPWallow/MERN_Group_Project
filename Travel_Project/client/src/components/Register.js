@@ -64,7 +64,7 @@ const Register = () => {
 
               <div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -72,7 +72,7 @@ const Register = () => {
 
               <div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Confirm Password"
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
