@@ -96,9 +96,9 @@ const DestinationDtls = (props) => {
                 <p>Returned: {dateFormat(oneDestination.returned, "dddd, mmmm dS, yyyy")}</p>
               </div>
             </div>
-            <div className={styles.image}>
+            <div className={styles.box}>
               <img src={`${oneDestination.boxArt}`} alt={`${oneDestination.boxArt}`} />
-              <p>Comments: {oneDestination.comments}</p>
+              <p> {oneDestination.comments}</p>
               {
                 oneDestination.createdbyUser ?
                   (
