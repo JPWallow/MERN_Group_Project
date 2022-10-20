@@ -181,14 +181,6 @@ const AddDestination = (props) => {
               <li>
                 <label>Upload a picture:</label>
                 <br />
-                {/* <input type="text" 
-                  value={boxArt}
-                  onChange={(e) => {
-                    console.log(e);
-                    console.log(e.target);
-                    console.log(e.target.value);
-                    setBoxArt(e.target.value);
-                  }}/> */}
                 <input
                   type="file"
                   value={boxArt}
