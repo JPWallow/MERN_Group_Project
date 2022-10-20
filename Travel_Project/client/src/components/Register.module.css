@@ -2,6 +2,7 @@
   padding: 0 40px 0 0;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   font-family: "Jost", sans-serif;
@@ -13,6 +14,15 @@
     ),
     linear-gradient(127deg, rgba(43, 207, 43, 0.8), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+h2 {
+  margin-bottom: 3%;
+  font-family: 'Charm';
+  font-size: 4em;
+  text-align: center;
+  color: #206475;
+  text-shadow: 2px 5px 10px rgba(228, 225, 36, 0.7);
 }
 
 .main {
