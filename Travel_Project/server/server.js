@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require('express')
 const app = express()
-const socket = require('socket.io')
 const jwt = require('jsonwebtoken')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 const port = process.env.MY_PORT;
+
+const server = app.listen(port, () => {
+    console.log('Listening on port')
+});
 
 const cors = require('cors');
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));

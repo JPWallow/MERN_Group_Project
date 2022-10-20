@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import dateFormat from 'dateformat';
 import styles from "./DestinationDtls.module.css";
 
+
 const DestinationDtls = (props) => {
 
   // const API_Key = "eb210e94bef01a65e8bdf3787786c3b6";
