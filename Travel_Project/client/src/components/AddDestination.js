@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
 import countryData from '../countries.json';
-import io from 'socket.io-client';
 
 const AddDestination = (props) => {
   const { destinationList, setDestinationList } = props;

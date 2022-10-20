@@ -3,14 +3,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-import io from 'socket.io-client';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [err, setErr] = useState("");
-  const [ socket, setSocket ] = useState( () => io(":8000") );
   const handleSubmit = (e) => {
     e.preventDefault();
     setErr("");
