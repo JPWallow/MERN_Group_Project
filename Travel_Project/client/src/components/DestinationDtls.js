@@ -13,14 +13,17 @@ const DestinationDtls = (props) => {
 
   const { id } = useParams();
 
+  // const [oneDestination, setOneDestination] = useState({});
   const [oneDestination, setOneDestination] = useState({});
   const [city, setCity] = useState({});
+
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/travel/${id}`)
       .then((res) => {
         console.log(res);
         console.log(res.data);
+        console.log(res.data.city);
         setOneDestination(res.data);
       })
       .catch((err) => {
@@ -28,10 +31,8 @@ const DestinationDtls = (props) => {
       });
   }, [id]);
   
-
-
-
-  axios
+  useEffect(()=>{
+    axios
       .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${oneDestination.city}&appid=${API_Key}&units=imperial`
       )
@@ -41,19 +42,10 @@ const DestinationDtls = (props) => {
           setCity(res.data);
       })
       .catch((err) => console.log(err));
-  // }
-  //! Need to get the axios post working
-  // const submitHandler=(e) =>{
-  //     e.preventDefault();
-  //     // placing the axios in the submitHandler event
-  //     axios.post(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=imperial`)
-  //     .then((res)=>{
-  //         console.log(res);
-  //         console.log(res.data);
-  //         setCity(res.data);
-  //         setCountry(res.data);
-  //     })
-  //     .catch((err)=>console.log(err))
+  }, [oneDestination.city]);
+
+
+  
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
