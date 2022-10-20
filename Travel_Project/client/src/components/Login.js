@@ -9,7 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [err, setErr] = useState("");
-  const [ socket, setSocket ] = useState( () => io(":8000") );
   const handleSubmit = (e) => {
     e.preventDefault();
     setErr("");
@@ -43,10 +42,13 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
+      <div>
+        <h2>Wanderlust Weblog </h2>
+      </div>
       <div className={styles.main}>
         <div className={styles.login}>
           <form onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h3>Login</h3>
             <Link className={styles.link} to="/dashboard">
               {" "}
               Dashboard{" "}
@@ -64,7 +66,7 @@ const Login = () => {
             <div>
               <br />
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -73,13 +75,11 @@ const Login = () => {
               Login
             </button>
             <div className={styles.footer}>
-
-         
-            <p>Don't have an account? </p>
-            <Link className={styles.link} to="/register">
-              {" "}
-              Register Here!{" "}
-            </Link>
+              <p>Don't have an account? </p>
+              <Link className={styles.link} to="/register">
+                {" "}
+                Register Here!{" "}
+              </Link>
             </div>
 
             {err && <h3 style={{ color: "red" }}>{err}</h3>}

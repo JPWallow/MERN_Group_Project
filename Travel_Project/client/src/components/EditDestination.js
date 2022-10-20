@@ -23,8 +23,6 @@ const EditDestination = (props) => {
 
     const [errors, setErrors] = useState([]);
 
-    const [ socket, setSocket ] = useState( () => io(":8000") );
-
     useEffect(() => {
         axios.get(`http://localhost:8000/api/travel/${id}`)
             .then(res => {
@@ -179,7 +177,7 @@ const EditDestination = (props) => {
                                     type="textarea"
                                     value={comments}
                                     name="comments"
-                                    className={styles.input}
+                                    className={styles.inputTextarea}
                                     onChange={(e) => {
                                         console.log(e);
                                         console.log(e.target);

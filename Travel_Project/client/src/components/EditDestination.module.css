@@ -50,7 +50,7 @@
   font-family: serif;
 }
  h1 {
-  font-family: "Dancing Script", cursive;
+  font-family: 'Arizonia';
   font-size: 3em;
   text-align: center;
   color: #206475;
@@ -86,14 +86,14 @@
   display: block;
   min-height: 10px;
   font-family: serif;
-  padding: 5px;
+  padding: px;
   font-size: large;
   font-weight: bold;
   color: rgb(71, 20, 71);
 }
  .form ul li .input {
 
-  padding: 5px;
+  padding: 3px;
   outline: none;
   border: 1px solid #b0cfe0;
   width: 100%;
@@ -107,7 +107,7 @@
   outline: none;
   border: 1px solid #b0cfe0;
   width: 100%;
-  height: 150px;
+  height: 8em;
   background: #f0e9e9;
 }
 

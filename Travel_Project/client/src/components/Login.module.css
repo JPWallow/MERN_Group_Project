@@ -1,6 +1,7 @@
 .container {
   padding: 0 40px 0 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -30,6 +31,15 @@
   height: 100%;
 }
 
+h2 {
+  margin-bottom: 5%;
+  font-family: 'Charm';
+  font-size: 5em;
+  text-align: center;
+  color: #206475;
+  text-shadow: 2px 5px 10px rgba(228, 225, 36, 0.7);
+}
+
 input {
   width: 80%;
   background: #e0dede;
@@ -57,18 +67,15 @@ input {
 }
 
 .footer {
- 
   font-size: 1.2em;
   padding: 0 0.5em;
 }
 
-.link , p {
-  
+.link,
+p {
   font-size: 1em;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   text-decoration: none;
- 
-  
 }
 
 .link:hover {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./AddDestination.module.css";
@@ -14,29 +14,33 @@ const AddDestination = (props) => {
   const [returned, setReturned] = useState("");
   const [boxArt, setBoxArt] = useState("");
   const [comments, setComments] = useState("");
-
+  // const [boxArtData, setBoxArtData] = useState(); //For new image upload
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState([]);
-
   
   // async function submitHandler(e) {
-  //   e.preventDefault();
-  //   try{
-  //     let imageUrl= "";
-  //     if(boxArt) {
-  //       const formData = new FormData();
-  //       formData.append("file", boxArt);
-  //       formData.append("upload_preset", "presentName");
-  //       const dataRes = await axios.post(
-  //         "yourUrl",
-  //         formData
-  //       );
-  //       imageUrl = dataRes.data.url;
-  //     }
-  //   }
 
-  const submitHandler = (e) => {
+  // const handleBoxArtChange = ({target}) => { //For new image upload
+  //   setBoxArtData(target.files[0]);
+  //   setBoxArt(target.value);
+
+  // }
+  // const submitHandler = async (e) => {
+
+  //   e.preventDefault();
+
+  //   const formdata = new FormData();
+
+  //   formdata.append("image", boxArtData);
+
+  //   await Axios.post("http://localhost:8000/api/travel", formdata)
+  //     .then((res) => console.log("res", res.data))
+  //     .catch((error) => console.error(error))
+  // };
+
+
+  const submitHandler = (e) => { // Original Form Code
     e.preventDefault();
     axios
       .post("http://localhost:8000/api/travel", 
@@ -51,6 +55,7 @@ const AddDestination = (props) => {
       {
         withCredentials: true
       })
+
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -131,7 +136,7 @@ const AddDestination = (props) => {
                     console.log(e);
                     console.log(e.target);
                     console.log(e.target.value);
-                    setCity(e.target.value); // this line is setting the state to so onChange the setter is setting the city to the value
+                    setCity(e.target.value);
                   }}
                 />
               </li>
@@ -186,20 +191,28 @@ const AddDestination = (props) => {
               <li>
                 <label>Upload a picture:</label>
                 <br />
-                <input
+                {/* <CustomInput  //For new image upload
                   type="file"
                   value={boxArt}
                   name="boxArt"
                   id="image-input"
-                  // accept="image/*"
-                  accept="image/jpeg, image/png, image/jpg"
+                  className={styles.input}
+                  accept="image/*"
+                  onChange={handleBoxArtChange}
+                  placeholder="upload image"
+                  isRequired={true} */}
+                <input // Original Form Code
+                  type="text"
+                  value={boxArt}
+                  name="boxArt"
+                  // id="image-input"
+                  // accept="image/jpeg, image/png, image/jpg"  
                   className={styles.input}
                   onChange={(e) => {
                     console.log(e);
                     console.log(e.target);
                     console.log(e.target.value);
                     setBoxArt(e.target.value);
-                    // setBoxArt(e.target.files[0]);
                   }}
                 />
               </li>
