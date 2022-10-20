@@ -38,13 +38,16 @@ const AddDestination = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/travel", {
+      .post("http://localhost:8000/api/travel", 
+      {
         city,
         country,
         departed,
         returned,
         boxArt,
         comments,
+
+        withCredentials: true
       })
       .then((res) => {
         console.log(res);

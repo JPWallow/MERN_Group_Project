@@ -28,7 +28,12 @@ const TravelSchema = new mongoose.Schema ({
     },
     comments:{
         type:String
-    }
+    },
+    // this is the user that created this Superhero model
+    createdByUser:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+        },
 
 },{timestamps:true})
 
