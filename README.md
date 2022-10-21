@@ -32,4 +32,4 @@ Contributers
 
 -Renee Ishikawa (Travel App Backend)
 
--Joshua Wallowitch (Travel App Frontend)
+-Joshua Wallowitch (Travel App Frontend / Group Lead)
