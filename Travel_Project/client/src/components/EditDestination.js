@@ -128,7 +128,7 @@ const EditDestination = (props) => {
                                 <label>Departed:</label><br />
                                 <input
                                     type="date"
-                                    value={departedDate}
+                                    // value={departedDate}
                                     name="departed"
                                     className={styles.input}
                                     onChange={(e) => {
@@ -143,7 +143,7 @@ const EditDestination = (props) => {
                                 <label>Returned:</label><br />
                                 <input
                                     type="date"
-                                    value={returnedDate}
+                                    // value={returnedDate}
                                     name="returned"
                                     className={styles.input}
                                     onChange={(e) => {
