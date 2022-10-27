@@ -24,7 +24,7 @@ const Login = () => {
         }
       )
       .then((response) => console.log(response))
-      navigate ("/dashboard")
+      navigate('/dashboard')
       .catch((err) => console.log(err));
   };
   // need this for logout in navbar
