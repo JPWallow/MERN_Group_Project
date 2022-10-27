@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import styles from "./EditDestination.module.css";
-// import dateFormat from 'dateformat';
+import dateFormat from 'dateformat';
 import countryData from '../countries.json';
 
 const EditDestination = (props) => {
@@ -18,8 +18,8 @@ const EditDestination = (props) => {
 
     const navigate = useNavigate();
 
-    const departedDate = dateFormat(departed, "yyyy-mm-d"); 
-    const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
+    // const departedDate = dateFormat(departed, "yyyy-mm-d"); 
+    // const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
 
     const [errors, setErrors] = useState([]);
 

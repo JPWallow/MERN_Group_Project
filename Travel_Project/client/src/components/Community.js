@@ -69,8 +69,8 @@ const Community = (props) => {
                                 <td>
                                     {destination.city}, {destination.country}
                                 </td>
-                                <td>{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td>
-                                <td>{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td>
+                                {/* <td>{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td> */}
+                                {/* <td>{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td> */}
                                 <td>
                                 
                                     <Link className={styles.Link} to={`/destinations/${destination._id}`}>Details</Link>
