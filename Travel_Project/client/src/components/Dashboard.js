@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./Dashboard.module.css";
-// import dateFormat from 'dateformat';
+import dateFormat from 'dateformat';
 
 const Dashboard = (props) => {
   const { removeFromDom, destinationList, setDestinationList } = props;
@@ -90,8 +90,8 @@ const Dashboard = (props) => {
                   <td >
                     {destination.city}, {destination.country}
                   </td>
-                  {/* <td >{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td> */}
-                  {/* <td >{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td> */}
+                  <td >{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td>
+                  <td >{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td>
                   {/* Will update with correct links */}
 
                   <td >
