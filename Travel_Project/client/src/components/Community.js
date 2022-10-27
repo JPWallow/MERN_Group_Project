@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import styles from "./Community.module.css";
-// import dateFormat from 'dateformat';
+import dateFormat from 'dateformat';
 
 const Community = (props) => {
 
@@ -69,8 +69,8 @@ const Community = (props) => {
                                 <td>
                                     {destination.city}, {destination.country}
                                 </td>
-                                {/* <td>{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td> */}
-                                {/* <td>{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td> */}
+                                <td>{dateFormat(destination.departed, "dddd, mmmm dS, yyyy")}</td>
+                                <td>{dateFormat(destination.returned, "dddd, mmmm dS, yyyy")}</td>
                                 <td>
                                 
                                     <Link className={styles.Link} to={`/destinations/${destination._id}`}>Details</Link>

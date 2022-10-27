@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-// import dateFormat from 'dateformat';
+import dateFormat from 'dateformat';
 import styles from "./DestinationDtls.module.css";
 
 
@@ -92,8 +92,8 @@ const DestinationDtls = (props) => {
               </div>
 
               <div >
-                {/* <p>Departed: {dateFormat(oneDestination.departed, "dddd, mmmm dS, yyyy")}</p> */}
-                {/* <p>Returned: {dateFormat(oneDestination.returned, "dddd, mmmm dS, yyyy")}</p> */}
+                <p>Departed: {dateFormat(oneDestination.departed, "dddd, mmmm dS, yyyy")}</p>
+                <p>Returned: {dateFormat(oneDestination.returned, "dddd, mmmm dS, yyyy")}</p>
               </div>
             </div>
             <div className={styles.box}>
