@@ -18,8 +18,8 @@ const EditDestination = (props) => {
 
     const navigate = useNavigate();
 
-    const departedDate = dateFormat(departed, "yyyy-mm-d"); 
-    const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
+    // const departedDate = dateFormat(departed, "yyyy-mm-d"); 
+    // const returnedDate = dateFormat(returned, "yyyy-mm-d"); 
 
     const [errors, setErrors] = useState([]);
 
