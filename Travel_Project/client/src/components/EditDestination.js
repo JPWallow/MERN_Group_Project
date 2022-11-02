@@ -65,6 +65,19 @@ const EditDestination = (props) => {
         // }
     };
 
+    const handleLogout = async() => {
+        try {
+            console.log('logged out')
+            const response = await axios.get("http://localhost:8000/api/logout", {
+                withCredentials: true 
+            })
+            navigate("/")
+        } catch (error) {
+            console.log(error.response);
+        };
+    
+    };
+
     return (
         <div className={styles.mainContainer}>
             <div className={styles.container}>
@@ -77,7 +90,7 @@ const EditDestination = (props) => {
                             <li><Link className={styles.link} to="/destinations/new">Add Your Destination</Link> </li>
                             <li><Link className={styles.link} to="/community">Community</Link>  </li>
 
-                            <li><Link className={styles.link} to="/">Logout</Link></li>
+                            <li><Link className={styles.link} onClick={handleLogout}>Logout</Link></li>
                         </ul>
                     </div>
                     <h1>Edit Your Destination</h1>

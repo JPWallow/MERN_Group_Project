@@ -21,10 +21,10 @@ const Login = () => {
         },
         {
           withCredentials: true,
-        }
+        },
+        navigate("/dashboard")
       )
       .then((response) => console.log(response))
-      navigate('/dashboard')
       .catch((err) => console.log(err));
   };
   // need this for logout in navbar

@@ -39,10 +39,15 @@ const Dashboard = (props) => {
 
   const handleLogout = async() => {
     try {
-        const response = await axios.post("http://localhost:8000/api/logout")
-    }   catch (error) {
-        console.log(error.response);
+      console.log('logged out')
+      const response = await axios.get("http://localhost:8000/api/logout", {
+        withCredentials: true 
+      })
+      navigate("/")
+    } catch (error) {
+      console.log(error.response);
     };
+
   };
 
   return (
@@ -67,7 +72,7 @@ const Dashboard = (props) => {
               </li>
               <li>
                 {" "}
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} onClick={handleLogout}>
                   Logout
                 </Link>
               </li>

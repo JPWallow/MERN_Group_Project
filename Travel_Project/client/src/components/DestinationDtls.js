@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import dateFormat from 'dateformat';
 import styles from "./DestinationDtls.module.css";
 
@@ -17,6 +17,7 @@ const DestinationDtls = (props) => {
   // const [oneDestination, setOneDestination] = useState({});
   const [oneDestination, setOneDestination] = useState({});
   const [city, setCity] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -45,6 +46,18 @@ const DestinationDtls = (props) => {
       .catch((err) => console.log(err));
   }, [oneDestination.city]);
 
+  const handleLogout = async() => {
+    try {
+      console.log('logged out')
+      const response = await axios.get("http://localhost:8000/api/logout", {
+        withCredentials: true 
+      })
+      navigate("/")
+    } catch (error) {
+      console.log(error.response);
+    };
+
+  };
 
   
   return (
@@ -71,7 +84,7 @@ const DestinationDtls = (props) => {
                 </Link>{" "}
               </li>
               <li>
-                <Link className={styles.link} to="/">
+              <Link className={styles.link} onClick={handleLogout}>
                   Logout
                 </Link>
               </li>

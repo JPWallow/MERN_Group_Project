@@ -23,6 +23,20 @@ const Community = (props) => {
 
     }, [])
 
+    const handleLogout = async() => {
+        try {
+            console.log('logged out')
+            const response = await axios.get("http://localhost:8000/api/logout", {
+                withCredentials: true 
+            })
+            navigate("/")
+        } catch (error) {
+            console.log(error.response);
+        };
+    
+    };
+
+
     return (
         <div className={styles.mainContainer}>
             <div className={styles.container}>
@@ -43,7 +57,7 @@ const Community = (props) => {
                                 |
                             </li>
                             <li>
-                                <Link className={styles.link} to="/">
+                                <Link className={styles.link} onClick={handleLogout}>
                                     Logout
                                 </Link>
                             </li>
